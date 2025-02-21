@@ -20,7 +20,7 @@ public class Glavni
 		napadi[2] = new Napad("Heavy Attack", 80, 50, false);
 		napadi[3] = new Napad("Healing", 50, 80, true);
 		
-		System.out.println("Izaberi cudoviste:");
+		System.out.println("Choose monster:");
 		ispisCudovista(1, fireMonster);
 		ispisCudovista(2, natureMonster);
 		ispisCudovista(3, earthMonster);
@@ -31,7 +31,7 @@ public class Glavni
 		
 		while(ponoviti)
 		{
-			System.out.print("Izbor: ");
+			System.out.print("Choice: ");
 			int broj = sc.nextInt();
 			switch(broj)
 			{
@@ -53,7 +53,6 @@ public class Glavni
 					break;
 			}
 		}
-		ispisTrenutnogStanja(igrac);
 		
 		Cudoviste[] redosled = new Cudoviste[4];
 		switch(igrac.getElement())
@@ -93,12 +92,12 @@ public class Glavni
 			while(igrac.getCurrentHealth() > 0 && protivnik.getCurrentHealth() > 0)
 			{
 				System.out.println("-----------------------------------");
-				System.out.println("Vase cudoviste:");
+				System.out.println("Your Monster:");
 				ispisTrenutnogStanja(igrac);
-				System.out.println("Vas protivnik:");
+				System.out.println("Your Enemy:");
 				ispisTrenutnogStanja(protivnik);
 				
-				System.out.println("Izaberite napad:");
+				System.out.println("Choose attack:");
 				for(int i = 0; i < 4; i++)
 				{
 					int broj = i + 1;
@@ -109,7 +108,7 @@ public class Glavni
 				Napad izborNapada = null;
 				while(ponoviti)
 				{
-					System.out.print("Izbor: ");
+					System.out.print("Choice: ");
 					int izbor = sc.nextInt();
 					if(izbor >= 1 && izbor <= 4)
 					{
@@ -153,7 +152,7 @@ public class Glavni
 			if(zivIgrac)
 			{
 				igrac.setHealth();
-				System.out.println("Ubili ste protivnika!");
+				System.out.println("You defeated your enemy!");
 				System.out.println("-----------------------------------");
 			}
 			
@@ -163,11 +162,11 @@ public class Glavni
 		
 		if(brojPobeda == 4 && zivIgrac)
 		{
-			System.out.println("Cestitamo na pobedi!");
+			System.out.println("Congratulations!");
 		}
 		else
 		{
-			System.out.println("Zao nam je, pokusajte ponovo");
+			System.out.println("You lost, try again!");
 		}
 	}
 	
@@ -193,7 +192,7 @@ public class Glavni
 		if(napad.getHealing())
 		{
 			int healing = napad.getDamagePercentage() * igrac.getPower() / 100;
-			System.out.println(napad.getName() + ": attack - " + healing + " // accuracy - " + napad.getHitPercentage());
+			System.out.println(napad.getName() + ": healing - " + healing + " // accuracy - " + napad.getHitPercentage());
 		}
 		else
 		{
