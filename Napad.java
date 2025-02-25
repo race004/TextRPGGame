@@ -5,14 +5,16 @@ public class Napad
 	private String imeNapada;
     private int damagePercentage;
 	private int hitPercentage;
-	private boolean healing; // false - damage , true - healing
+	private int staminaRequired;
+	private String element; //Physical, Fire, Nature, Earth, Air, Thunder, Water
 	
-	public Napad(String ime, int damage, int hit, boolean healing)
+	public Napad(String ime, int damage, int hit, int staminaReq, String element)
 	{
 		this.imeNapada = ime;
 		this.damagePercentage = damage;
 		this.hitPercentage = hit;
-		this.healing = healing;
+		this.staminaRequired = staminaReq;
+		this.element = element;
 	}
 	
 	public String getName()
@@ -30,9 +32,14 @@ public class Napad
 		return this.hitPercentage;
 	}
 	
-	public boolean getHealing()
+	public int getStaminaRequired()
 	{
-		return this.healing;
+		return this.staminaRequired;
+	}
+	
+	public String getElement()
+	{
+		return this.element;
 	}
 	
 	public int healingReturn(int power)

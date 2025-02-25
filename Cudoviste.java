@@ -1,20 +1,42 @@
-import java.util.Random;
-
 public class Cudoviste
-{
+{	
 	private String imeCudovista;
-    private int maxHealth;
+    
+	private int maxHealth;
     private int currentHealth;
-    private int power;
-	private String element; //Fire, Nature, Earth, Water
+	
+	private int maxStamina;
+	private int currentStamina;
+    
+	private int power;
+	private int speed;
+	
+	private String prviElement; //Fire, Nature, Earth, Air, Thunder, Water
+	private String drugiElement;
+	
+	private int level;
+	private int requiredXP;
+	private int currentXP;
 
-    public Cudoviste(String ime, int power, int health, String element)
+    public Cudoviste(String ime, int health, int stamina, int speed, int power, String element1, String element2)
     {
 		this.imeCudovista = ime;
+		
         this.maxHealth = health;
 		this.currentHealth = this.maxHealth;
+		
+		this.maxStamina = stamina;
+		this.currentStamina; = this.maxStamina;
+		
 		this.power = power;
-		this.element = element;
+		this.speed = speed;
+		
+		this.prviElement = element1;
+		this.drugiElement = element2;
+		
+		this.level = 1;
+		this.requiredXP = 100;
+		this.currentXP = 0;
     }
 	
 	public String getImeCudovista()
@@ -32,14 +54,49 @@ public class Cudoviste
 		return this.currentHealth;
 	}
 	
+	public int getMaxStamina()
+	{
+		return this.maxStamina;
+	}
+	
+	public int getCurrentStamina()
+	{
+		return this.currentStamina;
+	}
+	
 	public int getPower()
 	{
 		return this.power;
 	}
 	
-	public String getElement()
+	public int getSpeed()
 	{
-		return this.element;
+		return this.speed;
+	}
+	
+	public String getFirstElement()
+	{
+		return this.prviElement;
+	}
+	
+	public String getSecondElement()
+	{
+		return this.drugiElement;
+	}
+	
+	public int getLevel()
+	{
+		return this.level;
+	}
+	
+	public int getRequiredXP()
+	{
+		return this.requiredXP;
+	}
+	
+	public int getCurrentXP()
+	{
+		return this.currentXP;
 	}
 	
 	public boolean damageRecieved(int damage)
@@ -66,38 +123,89 @@ public class Cudoviste
 		}	
 	}
 	
+	public void removeStamina(int stamina)
+	{
+		this.currentStamina -= stamina;
+		
+		if(this.currentStamina < 0)
+		{
+			this.currentStamina = 0;
+		}
+	}
+	
+	public void addStamina(int stamina)
+	{
+		this.currentStamina += stamina;
+		
+		if(this.currentStamina > this.maxStamina)
+		{
+			this.currentStamina = this.maxStamina;
+		}
+	}
+	
+	public void staminaRecharge()
+	{
+		this.currentStamina += this.maxStamina / 2;
+		
+		if(this.currentStamina > this.maxStamina)
+		{
+			this.currentStamina = this.maxStamina;
+		}
+	}
+	
+	public void setStamina()
+	{
+		this.currentStamina = this.maxStamina;
+	}
+	
 	public void setHealth()
 	{
 		this.currentHealth = this.maxHealth;
 	}
 	
-	public double compareElements(Cudoviste monster)
+	public void addXP(int experience)
 	{
-		if(this.element == "fire" && monster.getElement() == "nature")
+		this.currentXP += experience;
+		if(this.level >= 10)
 		{
-			return 2;
+			return;
 		}
 		
-		if(this.element == "nature" && monster.getElement() == "earth")
+		if(this.currentXP >= this.requiredXP)
 		{
-			return 2;
+			this.level++;
+			this.currentXP -= this.requiredXP;
+			this.requiredXP += 10;
+			
+			this.maxHealth += 10;
+			this.currentHealth = this.maxHealth;
+			
+			this.power += 10;
+			this.speed += 10;
+		}
+	}
+
+	public void setLevel(int level)
+	{
+		if(level > 10)
+		{
+			this.level = 10;
+			level = 10;
+		}
+		else if(level < 1)
+		{
+			this.level = 1;
+			level = 1;
+		}
+		else
+		{
+			this.level = level;
 		}
 		
-		if(this.element == "earth" && monster.getElement() == "water")
-		{
-			return 2;
-		}
+		this.maxHealth += 10 * level - 10;
+		this.currentHealth = this.maxHealth;
 		
-		if(this.element == "water" && monster.getElement() == "fire")
-		{
-			return 2;
-		}
-		
-		if(this.element.equals(monster.getElement()))
-		{
-			return 0.5;
-		}
-		
-		return 1;
+		this.power += 10 * level - 10;
+		this.speed += 10 * level - 10;
 	}
 }

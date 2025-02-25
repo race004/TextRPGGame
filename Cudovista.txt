@@ -1,0 +1,26 @@
+Elements - Fire, Nature, Earth, Air, Thunder, Water
+Stats - Health, Power, Speed, Stamina
+
+Monsters: 21
+
+Fire - 100 / 100 / 100 / 100
+Fire Nature - 100 / 100 / 100 / 100
+Fire Earth - 100 / 100 / 100 / 100
+Fire Air - 100 / 100 / 100 / 100
+Fire Thunder - 100 / 100 / 100 / 100
+Fire Water - 100 / 100 / 100 / 100
+Nature - 100 / 100 / 100 / 100
+Nature Earth - 100 / 100 / 100 / 100
+Nature Air - 100 / 100 / 100 / 100
+Nature Thunder - 100 / 100 / 100 / 100
+Nature Water - 100 / 100 / 100 / 100
+Earth - 100 / 100 / 100 / 100
+Earth Air - 100 / 100 / 100 / 100
+Earth Thunder - 100 / 100 / 100 / 100
+Earth Water - 100 / 100 / 100 / 100
+Air - 100 / 100 / 100 / 100
+Air Thunder - 100 / 100 / 100 / 100
+Air Water - 100 / 100 / 100 / 100
+Thunder - 100 / 100 / 100 / 100
+Thunder Water - 100 / 100 / 100 / 100
+Water - 100 / 100 / 100 / 100

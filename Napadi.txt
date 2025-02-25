@@ -1,0 +1,27 @@
+Normal Attack -----> Power - 30% // Accuracy - 90% // Stamina - 20
+
+Fire Attack -----> Power - 20% // Accuracy - 90% // Stamina - 20
+Nature Attack -----> Power - 20% // Accuracy - 90% // Stamina - 20
+Earth Attack -----> Power - 20% // Accuracy - 90% // Stamina - 20
+Air Attack -----> Power - 20% // Accuracy - 90% // Stamina - 20
+Thunder Attack -----> Power - 20% // Accuracy - 90% // Stamina - 20
+Water Attack -----> Power - 20% // Accuracy - 90% // Stamina - 20
+
+Healing -----> Power - 30% // Accuracy - 90% // Stamina - 20
+
+Fire Damage Over Time - Burning -----> Damage - 20% // Accuracy - 80% // Turns - 3 // Stamina - 20
+Nature Damage Over Time - Poison -----> Damage - 20% // Accuracy - 80% // Turns - 3 // Stamina - 20
+Earth Damage Over Time - Sandstorm -----> Damage - 20% // Accuracy - 80% // Turns - 3 // Stamina - 20
+Air Damage Over Time - Wind -----> Damage - 20% // Accuracy - 80% // Turns - 3 // Stamina - 20
+Thunder Damage Over Time - Shock -----> Damage - 20% // Accuracy - 80% // Turns - 3 // Stamina - 20
+Water Damage Over Time - Frost -----> Damage - 20% // Accuracy - 80% // Turns - 3 // Stamina - 20
+
+Stun -----> Power - 20% // Accuracy - 80% // Skill - 50% // Stamina - 20
+
+Extra Turn -----> Power - 10% // Accuracy - 60% // Skill - 100% // Stamina - 20
+
+Stamina Reduction -----> Power - 50 // Accuracy - 80% // Stamina - 20
+Stamina Reduction Over Time - Drown -----> Power - 20 // Accuracy 80% // Turns - 3 // Stamina - 20
+
+Healing Over Time - Regeneration -----> Damage - 15% // Accuracy - 80% // Turns - 3 // Stamina - 20
+Stamina Regeneration Over Time - Refresh -----> Power - 20 // Accuracy - 80% // Turns - 3 // Stamina - 20
